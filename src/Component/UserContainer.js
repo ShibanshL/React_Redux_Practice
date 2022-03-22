@@ -7,22 +7,22 @@ function UserContainer({userData,fetchUsers}) {
         fetchUsers()
         console.log('usedata', userData)
     },[])
-  return userData.loading?(
-    <div>
-        userData is Loading
-    </div>
-  ):
-  userData.error ? (
-      <h2>{userData.error}</h2>
-  ):(
-      <>
-      <h2>User List</h2>
-      <div>
-          {userData && userData.user && userData.user.map(user => <p>{user.name}</p>)}
-          {/* {userData.map(e => <>{e.name}</>)} */}
-      </div>
-      </>
-  )
+//   return userData.loading?(
+//     <div>
+//         userData is Loading
+//     </div>
+//   ):
+//   userData.error ? (
+//       <h2>{userData.error}</h2>
+//   ):(
+//       <div>
+//       <h2>User List</h2>
+//       <div>
+//           {userData && userData.user && userData.user.map(user => <p>{user.name}</p>)}
+//           {/* {userData.map(e => <>{e.name}</>)} */}
+//       </div>
+//       </div>
+//   )
 }
 
 const mapStateToProps = state => {
