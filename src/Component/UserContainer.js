@@ -18,8 +18,8 @@ function UserContainer({userData,fetchUsers}) {
       <>
       <h2>User List</h2>
       <div>
-          {/* {userData && userData.user && userData.user.map(user => <p>{user.name}</p>)} */}
-          {userData.map(e => <>{e.name}</>)}
+          {userData && userData.user && userData.user.map(user => <p>{user.name}</p>)}
+          {/* {userData.map(e => <>{e.name}</>)} */}
       </div>
       </>
   )
