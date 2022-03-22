@@ -5,8 +5,14 @@ import { fetchUsers } from '../Redux/User/UserAction'
 function UserContainer({userData,fetchUsers}) {
     useEffect(() => {
         fetchUsers()
-        console.log('usedata', userData)
     },[])
+    // return console.log("Users"+userData.user)
+    return(
+        <>
+        Hi
+        {/* {userData.user.map(e => <>{e.name}</>)} */}
+        </>
+    )
 //   return userData.loading?(
 //     <div>
 //         userData is Loading
