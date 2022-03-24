@@ -8,6 +8,7 @@ import ChocolateContainer from './Component/ChocolateContainer';
 import NewCakeContainer from './Component/NewCakeContainer';
 import ItemContainer from './Component/ItemContainer';
 import UserContainer from './Component/UserContainer';
+import NewUserData from './Component/NewUserData';
 function App() {
   return (
     <Provider store={store}>
@@ -35,7 +36,9 @@ function App() {
 
         <NewCakeContainer /> */}
 
-        <UserContainer />
+        {/* <UserContainer /> */}
+
+        <NewUserData />
 
       </div>
     </Provider>

@@ -1,10 +1,10 @@
 import React,{useEffect} from "react";
-import { fetchUserDaataAgain } from "../Redux/NewUser/NewUserAction";
+import { fetchUserDataAgain } from "../Redux/NewUser/NewUserAction";
 import { connect } from "react-redux";
 
-function NewUserData(userData,fetchUserDaataAgain) {
+function NewUserData({userData,fetchUserDataAgain}) {
     useEffect(()=>{
-        fetchUserDaataAgain()
+        fetchUserDataAgain()
     },[])
      return userData.loading?(
     <div>
@@ -30,9 +30,9 @@ export const mapStateToProps = (state) =>{
         userData:state.newData
     }
 }
-export const mapDispatchToProps = (dispatchEvent) => {
+export const mapDispatchToProps = (dispatch) => {
     return{
-        getData : () => dispatch(fetchUserDaataAgain())
+        getData : () => dispatch(fetchUserDataAgain())
     }
 }
 
