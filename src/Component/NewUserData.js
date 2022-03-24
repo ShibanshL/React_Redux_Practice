@@ -26,7 +26,7 @@ function NewUserData({userData,fetchUserDataAgain}) {
 
     return( 
         <>
-        {userData[1].name}
+        {userData.map(e => <>{e.name}<br></br></>)}
         </>
      )
 }
