@@ -8,21 +8,21 @@ const initialData = {
 }
 
 
-export function newReducer (state = initialData, action){
-    if(action.type==GET_DATA_REQUEST){
+export const newReducer = (state = initialData, action) => {
+    if(action.type === GET_DATA_REQUEST){
         return{
             ...state,
             loading:true
         }
     }
-    else if(action.type == GET_DATA_SUCCESS){
+    else if(action.type === GET_DATA_SUCCESS){
         return{
             loading:false,
             data:action.payload,
             error:''
         }
     }
-    else if(action.type == GET_DATA_FAILURE){
+    else if(action.type === GET_DATA_FAILURE){
         return{
             loading:false,
             data:[],

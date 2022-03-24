@@ -1,19 +1,19 @@
 import { GET_DATA_FAILURE, GET_DATA_SUCCESS, GET_DATA_REQUEST } from "./NewUserType";
 import axios from "axios";
-export function getDataRequest(){
+export const getDataRequest = () => {
     return{
         type:GET_DATA_REQUEST
     }
 }
 
-export function getDataFailure(error){
+export const getDataFailure = error => {
     return{
         type:GET_DATA_FAILURE,
         payloads:error
     }
 }
 
-export function getDataSuccess(data){
+export const getDataSuccess = data =>{
     return{
         type:GET_DATA_SUCCESS,
         payloads:data
