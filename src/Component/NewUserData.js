@@ -5,30 +5,39 @@ import { connect } from "react-redux";
 function NewUserData({userData,fetchUserDataAgain}) {
     useEffect(()=>{
         fetchUserDataAgain()
+        console.log('00pls',userData)
     },[])
-     return userData.loading?(
-    <div>
-        userData is Loading
-    </div>
-  ):
-  userData.error ? (
-      <h2>{userData.error}</h2>
-  ):(
-      <div>
-      <h2>User List</h2>
-      <div>
-          {userData && userData.user && userData.user.map(user => <p>{user.name}</p>)}
-          {/* {userData.map(e => <>{e.name}</>)} */}
-      </div>
-      </div>
-  )
+//      return userData.loading?(
+//     <div>
+//         userData is Loading
+//     </div>
+//   ):
+//   userData.error ? (
+//       <h2>{userData.error}</h2>
+//   ):(
+//       <div>
+//       <h2>User List</h2>
+//       <div>
+//           {userData && userData.user && userData.user.map(user => <p>{user.name}</p>)}
+//           {/* {userData.map(e => <>{e.name}</>)} */}
+//       </div>
+//       </div>
+//   )
 
+    return( 
+        <>
+        {userData[1].name}
+        </>
+     )
 }
 
-export const mapStateToProps = (state) =>{
+export const mapStateToProps = state =>{
+    // console.log(userData)
+
     return{
-        userData:state.newData
+        userData:state.newData.data
     }
+
 }
 export const mapDispatchToProps = (dispatch) => {
     return{

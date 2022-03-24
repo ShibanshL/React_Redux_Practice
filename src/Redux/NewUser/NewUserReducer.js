@@ -18,7 +18,7 @@ export const newReducer = (state = initialData, action) => {
     else if(action.type === GET_DATA_SUCCESS){
         return{
             loading:false,
-            data:action.payload,
+            data:action.payloads,
             error:''
         }
     }
@@ -26,7 +26,7 @@ export const newReducer = (state = initialData, action) => {
         return{
             loading:false,
             data:[],
-            error:action.payload
+            error:action.payloads
         }
     }
     else{
