@@ -17,14 +17,14 @@ export function newReducer (state = initialData, action){
     }
     else if(action.type == GET_DATA_SUCCESS){
         return{
-            ...state,
+            loading:false,
             data:action.payload,
             error:''
         }
     }
     else if(action.type == GET_DATA_FAILURE){
         return{
-            ...state,
+            loading:false,
             data:[],
             error:action.payload
         }
