@@ -20,34 +20,34 @@ export function getDataSuccess(data){
     }
 }
 
-export function fetchUserDataAgain(){
-    return async (dispatch) => {
-        dispatch(getDataRequest)
-        try {
-            const url ='https://jsonplaceholder.typicode.com/users'
-            const response = await fetch(url)
-            const data = await response.json()
-            dispatch(getDataSuccess(data))
-        } 
-        catch (error) {
-            const errorM = error.message
-            dispatch(getDataFailure(errorM))
-        }
-    }
-}
-
 // export function fetchUserDataAgain(){
-//     return (dispatch) => {
+//     return async (dispatch) => {
 //         dispatch(getDataRequest)
-//         axios.get('https://jsonplaceholder.typicode.com/users')
-//         .then(response => { 
-//             const users = response.data
-//             console.log(users)
-//             dispatch(getDataSuccess(users))
-//          })
-//         .catch(error => { 
-//             const errorMsg = error.message
-//             dispatch(getDataFailure(errorMsg))
-//         })
+//         try {
+//             const url ='https://jsonplaceholder.typicode.com/users'
+//             const response = await fetch(url)
+//             const data = await response.json()
+//             dispatch(getDataSuccess(data))
+//         } 
+//         catch (error) {
+//             const errorM = error.message
+//             dispatch(getDataFailure(errorM))
+//         }
 //     }
 // }
+
+export const fetchUserDataAgain = () => {
+    return (dispatch) => {
+        dispatch(getDataRequest)
+        axios.get('https://jsonplaceholder.typicode.com/users')
+        .then(response => { 
+            const users = response.data
+            // console.log(users)
+            dispatch(getDataSuccess(users))
+         })
+        .catch(error => { 
+            const errorMsg = error.message
+            dispatch(getDataFailure(errorMsg))
+        })
+    }
+}

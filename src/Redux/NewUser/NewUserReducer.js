@@ -18,7 +18,7 @@ export function newReducer (state = initialData, action){
     else if(action.type == GET_DATA_SUCCESS){
         return{
             ...state,
-            data:[action.payload],
+            data:action.payload,
             error:''
         }
     }
